@@ -206,6 +206,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\codeBloodedModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\JsonDataModels\Organizer.cs" />
+    <Compile Include="Models\JsonDataModels\Photo.cs" />
+    <Compile Include="Models\JsonDataModels\Result.cs" />
+    <Compile Include="Models\JsonDataModels\RootObject.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -272,6 +276,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\SearchResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

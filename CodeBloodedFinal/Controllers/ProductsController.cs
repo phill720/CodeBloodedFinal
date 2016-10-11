@@ -10,12 +10,14 @@ using System.Web;
 using System.Web.Mvc;
 using CodeBloodedFinal.Controllers;
 using CodeBloodedFinal.Models;
+using System.Web.Script.Serialization;
+using CodeBloodedFinal.Models.JsonDataModels;
 
 namespace CodeBloodedFinal.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly string APIKEY = "";
+        private readonly string APIKEY = "5e1d7e6e714b153e30a0329197673";
         
         public ActionResult Index()
         {
@@ -29,18 +31,25 @@ namespace CodeBloodedFinal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Search(string UserName, string UserEmail, string UserZip)
+        public ActionResult Index(string Name, string Email, string Zip)
         {
 
             //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
-            String searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=" + UserZip + @"&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
-            JObject jobject = MakeRequest(searchUrl);
-            
-            var results = jobject["thumb_link"]["name"]["link"]["members"].ToList();
+            //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
+
+            String searchUrl = @"https://api.meetup.com/find/groups?key=" + APIKEY + $@"&sign=true&photo-host=public&zip=" + Zip + $@"&text=healthy,%20Detroit&page=10";
+            var jobject = MakeRequest(searchUrl);
+
+            JavaScriptSerializer oJS = new JavaScriptSerializer();
+            RootObject oRootObject = new RootObject();
+            oRootObject = oJS.Deserialize<RootObject>(MakeRequest(searchUrl).ToString());
+            var junk = jobject["name"];
+
+            var o = jobject["name"]["link"]["members"].ToList();
 
             List<string> lst = new List<string>();
 
-            foreach (var r in results)
+            foreach (var r in o)
             {
                 lst.Add(r.ToString());
             }
@@ -72,7 +81,10 @@ namespace CodeBloodedFinal.Controllers
                     using (var reader = new StreamReader(response.GetResponseStream()))
                     {
                         string result = reader.ReadToEnd();
-                        o = JObject.Parse(result);
+                        if (result.Length>0 && result.Substring(0,1)=="[") {
+                            result = "{\"result\":"+result+"}";
+                        }
+                        o = JObject.Parse(result); 
                         return o;
                     }
                 } }
