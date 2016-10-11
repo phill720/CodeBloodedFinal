@@ -1,0 +1,25 @@
+﻿@*@model CodeBloodedFinal.Models.codeBloodedModel*@
+@{
+    ViewBag.Title = "Search";
+
+}
+<h2>Search For Health conscious people in Detroit</h2>
+@using (Html.BeginForm())
+{
+
+    <div>
+        Name<input type="text" name="Name" value="" />
+    </div>
+    <br />
+    <div>
+        Email<input type="text" name="Email" value="" />
+    </div>
+    <br />
+    <div>
+        Zip<input type="text" name="Zip" value="48226" />
+    </div>
+    <br />
+
+    <input type="submit" value="Search" />
+
+}
