@@ -1,5 +1,5 @@
 ﻿
-@model CodeBloodedFinal.Models.codeBloodedModel
+@model CodeBloodedFinal.Models.UserInputModel
 
 @{
     ViewBag.Title = "Search Results";
@@ -9,5 +9,10 @@
 <h2>Thank you for searching: @Model.Name</h2>
 <h3>Here are the listing for @Model.Zip</h3>
     <div>
-        
+        <ul>
+            @foreach (var text in ViewBag.results)
+            {
+                <li>@text.Name; @text.link; @text.Members;</li>
+            }
+        </ul>
     </div>

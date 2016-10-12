@@ -81,6 +81,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -203,8 +205,27 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HealthyD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HealthyD.cs">
+      <DependentUpon>HealthyD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HealthyD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="HealthyD1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthyD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\codeBloodedModel.cs" />
+    <Compile Include="Models\ADTO.cs" />
+    <Compile Include="Models\UserInputModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JsonDataModels\Organizer.cs" />
     <Compile Include="Models\JsonDataModels\Photo.cs" />
@@ -221,12 +242,29 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HealthyD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthyD.edmx</DependentUpon>
+      <LastGenOutput>HealthyD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HealthyD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HealthyD.edmx</DependentUpon>
+      <LastGenOutput>HealthyD1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="HealthyD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HealthyD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="HealthyD.edmx.diagram">
+      <DependentUpon>HealthyD.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -280,7 +318,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GooglePlace\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -292,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

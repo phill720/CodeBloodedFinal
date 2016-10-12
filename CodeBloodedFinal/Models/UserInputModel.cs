@@ -5,7 +5,7 @@ using System.Web;
 
 namespace CodeBloodedFinal.Models
 {
-    public class codeBloodedModel
+    public class UserInputModel
     {
         public string Name { get; set; }
 

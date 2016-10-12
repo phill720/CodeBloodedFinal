@@ -18,7 +18,7 @@ namespace CodeBloodedFinal.Controllers
     public class ProductsController : Controller
     {
         private readonly string APIKEY = "5e1d7e6e714b153e30a0329197673";
-        
+
         public ActionResult Index()
         {
             return View();
@@ -33,6 +33,12 @@ namespace CodeBloodedFinal.Controllers
         [HttpPost]
         public ActionResult Index(string Name, string Email, string Zip)
         {
+            ClassroomEntities dbcontext = new ClassroomEntities();
+            HealthyD userInfo = new HealthyD();
+            userInfo.Name = Name; dbcontext.SaveChanges();
+            userInfo.Email = Email; dbcontext.SaveChanges();
+            userInfo.Zip = Zip; dbcontext.SaveChanges();
+            dbcontext.HealthyD.Add(userInfo); dbcontext.SaveChanges();
 
             //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
             //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
@@ -43,21 +49,27 @@ namespace CodeBloodedFinal.Controllers
             JavaScriptSerializer oJS = new JavaScriptSerializer();
             RootObject oRootObject = new RootObject();
             oRootObject = oJS.Deserialize<RootObject>(MakeRequest(searchUrl).ToString());
-            var junk = jobject["name"];
+            //var junk = jobject["name"];
 
-            var o = jobject["name"]["link"]["members"].ToList();
+            var o = jobject["result"].ToList();
 
-            List<string> lst = new List<string>();
+            List<ADTO> lst = new List<ADTO>();
 
-            foreach (var r in o)
+            foreach (JObject r in o)
             {
-                lst.Add(r.ToString());
+                ADTO record = new ADTO();
+                record.Name = r["name"].ToString();
+                record.link = r["link"].ToString();
+                record.Members = int.Parse(r["members"].ToString());
+                // record.thumb_link = r["thumb_link"].ToString();
+                lst.Add(record);
+
             }
             ViewBag.results = lst;
 
             //ViewBag.location = jobject["location"]["areaDescription"].ToString();
-            
-            return View("SearchResults");
+
+            return View("SearchResults", userInfo);
         }
 
         public JObject MakeRequest(string requestUrl)
@@ -81,13 +93,15 @@ namespace CodeBloodedFinal.Controllers
                     using (var reader = new StreamReader(response.GetResponseStream()))
                     {
                         string result = reader.ReadToEnd();
-                        if (result.Length>0 && result.Substring(0,1)=="[") {
-                            result = "{\"result\":"+result+"}";
+                        if (result.Length > 0 && result.Substring(0, 1) == "[")
+                        {
+                            result = "{\"result\":" + result + "}";
                         }
-                        o = JObject.Parse(result); 
+                        o = JObject.Parse(result);
                         return o;
                     }
-                } }
+                }
+            }
             catch (Exception e)
             {
                 // catch exception and log it
