@@ -34,6 +34,7 @@ namespace CodeBloodedFinal.Controllers
         [HttpPost]
         public ActionResult Index(string Name, string Email, string Zip)
         {
+            //------Adding in datbase---------
             HealthyInD dbcontext = new HealthyInD();
             HealthyD userInfo = new HealthyD();
             userInfo.Name = Name;
@@ -41,19 +42,21 @@ namespace CodeBloodedFinal.Controllers
             userInfo.Zip = Zip;
             dbcontext.HealthyDs.Add(userInfo);
             dbcontext.SaveChanges();
+            //--------------------------------
 
+            //-------Connecting to API--------
             //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
             //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
-
             String searchUrl = @"https://api.meetup.com/find/groups?key=" + APIKEY + $@"&sign=true&photo-host=public&zip=" + Zip + $@"&text=healthy,%20Detroit&page=10";
             var jobject = MakeRequest(searchUrl);
+            //--------------------------------
 
+            //--------Reading/Formatting Data?--------
             JavaScriptSerializer oJS = new JavaScriptSerializer();
             RootObject oRootObject = new RootObject();
             oRootObject = oJS.Deserialize<RootObject>(MakeRequest(searchUrl).ToString());
-            //var junk = jobject["name"];
-
             var o = jobject["result"].ToList();
+            //----------------------------------------
 
             List<ADTO> lst = new List<ADTO>();
 
