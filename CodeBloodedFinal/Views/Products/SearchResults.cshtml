@@ -1,18 +1,27 @@
 ﻿
 @model CodeBloodedFinal.HealthyD
 
-@{
-    ViewBag.Title = "Search Results";
-}
+    @{
+        ViewBag.Title = "Search Results";
+    }
 
-<h2>Thank you for searching: @Model.Name</h2>
-<h3>Here are the listing for @Model.Zip</h3>
-<h4>@ViewBag.Slogan</h4>
-    <div>
-        <ul>
-            @foreach (var text in ViewBag.results)
+    <h2>Thank you for searching: @Model.Name</h2>
+    <h3>Here are the listing for @Model.Zip</h3>
+    <h4>@ViewBag.Slogan</h4>
+        <div>
+            <ul>
+                @foreach (var text in ViewBag.results)
             {
-                <li>@text.Name; @text.link; @text.Members;</li>
-            }
-        </ul>
-    </div>
+                    <li>
+                        <div>
+                            
+                            @text.Name;
+                        </div>
+                        <div style="color:blue">
+                            <a href="@text.link"> @text.link </a>
+                        </div>
+                    # of Members: @text.Members;
+                </li>
+                }
+            </ul>
+        </div>
