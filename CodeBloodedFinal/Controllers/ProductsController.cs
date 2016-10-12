@@ -12,6 +12,7 @@ using CodeBloodedFinal.Controllers;
 using CodeBloodedFinal.Models;
 using System.Web.Script.Serialization;
 using CodeBloodedFinal.Models.JsonDataModels;
+using SloganHealth;
 
 namespace CodeBloodedFinal.Controllers
 {
@@ -33,12 +34,13 @@ namespace CodeBloodedFinal.Controllers
         [HttpPost]
         public ActionResult Index(string Name, string Email, string Zip)
         {
-            ClassroomEntities dbcontext = new ClassroomEntities();
+            HealthyInD dbcontext = new HealthyInD();
             HealthyD userInfo = new HealthyD();
-            userInfo.Name = Name; dbcontext.SaveChanges();
-            userInfo.Email = Email; dbcontext.SaveChanges();
-            userInfo.Zip = Zip; dbcontext.SaveChanges();
-            dbcontext.HealthyD.Add(userInfo); dbcontext.SaveChanges();
+            userInfo.Name = Name;
+            userInfo.Email = Email;
+            userInfo.Zip = Zip;
+            dbcontext.HealthyDs.Add(userInfo);
+            dbcontext.SaveChanges();
 
             //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
             //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
@@ -66,10 +68,10 @@ namespace CodeBloodedFinal.Controllers
 
             }
             ViewBag.results = lst;
-
+            ViewBag.Slogan = SloganList.GetRandomSlogan();
             //ViewBag.location = jobject["location"]["areaDescription"].ToString();
 
-            return View("SearchResults", userInfo);
+            return View("SearchResults", userInfo );
         }
 
         public JObject MakeRequest(string requestUrl)

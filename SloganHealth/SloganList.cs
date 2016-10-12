@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SloganHealth
 {
-    public class SloganList
+    public static class SloganList
     {
-        private List<string> m_sloganList = new List<string> { "Drink More Water",
+        private static List<string> m_sloganList = new List<string> { "Drink More Water",
         "Focus on Nutrients, Not Calories",
         "Limit your alcohol intake.",
         "Walk at least 3 times a week for 20 to 30 minutes",
@@ -68,7 +68,7 @@ namespace SloganHealth
          "Go wildlife watching - Pheasants, coyote, deer, bald eagles, peregrine falcons...who knows what else?!Our urban prairie is home to many unexpected animals.",
          "Bust a move - And now for something completely different: learn how to salsa dance on Fridays and Saturdays at Vicente’s Cuban Cuisine or even make the trek out to Diamondback Saloon to learn how to line dance.",
         "Run around with your pooch at a dog park - Or, go by yourself and run around with someone else’s pooch, since most owners will let you pet their dogs for free.",    };
-        public string GetRandomSlogan()
+        public static string GetRandomSlogan()
         {
             int upperbound = m_sloganList.Count;
             Random random = new Random();

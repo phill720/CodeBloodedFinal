@@ -13,10 +13,10 @@ namespace CodeBloodedFinal
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ClassroomEntities : DbContext
+    public partial class HealthyInD : DbContext
     {
-        public ClassroomEntities()
-            : base("name=ClassroomEntities")
+        public HealthyInD()
+            : base("name=HealthyInD")
         {
         }
     
@@ -25,6 +25,6 @@ namespace CodeBloodedFinal
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<HealthyD> HealthyD { get; set; }
+        public virtual DbSet<HealthyD> HealthyDs { get; set; }
     }
 }

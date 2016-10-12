@@ -1,13 +1,13 @@
 ﻿
-@model CodeBloodedFinal.Models.UserInputModel
+@model CodeBloodedFinal.HealthyD
 
 @{
     ViewBag.Title = "Search Results";
 }
 
-//result
 <h2>Thank you for searching: @Model.Name</h2>
 <h3>Here are the listing for @Model.Zip</h3>
+<h4>@ViewBag.Slogan</h4>
     <div>
         <ul>
             @foreach (var text in ViewBag.results)

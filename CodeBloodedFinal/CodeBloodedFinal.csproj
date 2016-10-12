@@ -205,23 +205,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HealthyD.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HealthyD.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="HealthyD.cs">
-      <DependentUpon>HealthyD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="HealthyD.Designer.cs">
+    <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HealthyD.edmx</DependentUpon>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="HealthyD1.cs">
+    <Compile Include="Model1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HealthyD.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelHealthInD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelHealthInD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ADTO.cs" />
@@ -242,15 +242,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="HealthyD.Context.tt">
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthyD.edmx</DependentUpon>
-      <LastGenOutput>HealthyD.Context.cs</LastGenOutput>
+      <DependentUpon>ModelHealthInD.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="HealthyD.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HealthyD.edmx</DependentUpon>
-      <LastGenOutput>HealthyD1.cs</LastGenOutput>
+      <DependentUpon>ModelHealthInD.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
@@ -259,12 +259,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="HealthyD.edmx">
+    <EntityDeploy Include="ModelHealthInD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HealthyD.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelHealthInD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="HealthyD.edmx.diagram">
-      <DependentUpon>HealthyD.edmx</DependentUpon>
+    <Content Include="ModelHealthInD.edmx.diagram">
+      <DependentUpon>ModelHealthInD.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -332,6 +332,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SloganHealth\SloganHealth.csproj">
+      <Project>{b0c21db9-738a-43f0-8878-a8ee7b8e54e6}</Project>
+      <Name>SloganHealth</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
