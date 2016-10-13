@@ -315,9 +315,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
-    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Index3.cshtml" />
     <Content Include="Views\Products\SearchResults.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

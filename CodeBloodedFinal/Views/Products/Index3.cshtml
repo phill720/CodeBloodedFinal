@@ -1,0 +1,28 @@
+﻿@model CodeBloodedFinal.HealthyD
+    @Html.ValidationSummary()
+@{
+    ViewBag.Title = "Search";
+
+}
+<body style="background-color:darkseagreen">
+    <img src="https://sylviahubbard.files.wordpress.com/2016/10/healthydlogo.png">
+
+    <h2>Search For Health conscious people in Detroit</h2>
+    @using (Html.BeginForm())
+    {
+        <pre style="background-color:darkseagreen; border-color:darkseagreen; font-size:larger">
+Name        <input type="text" name="Name" value="" />
+
+Email       <input type="text" name="Email" value="" />
+
+Zip         <input type="text" name="Zip" value="48226" />
+
+        
+</pre>
+        <br />
+            
+
+        <input type="submit" value="Search" />
+
+    }
+</body>

@@ -12,10 +12,10 @@ namespace CodeBloodedFinal
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class HealthyD
     {
-        
+
         public int ID { get; set; }
         [Required(ErrorMessage = "Please Enter Your Name")]
         public string Name { get; set; }
@@ -23,7 +23,8 @@ namespace CodeBloodedFinal
         [RegularExpression(".+\\@.+\\..+",
             ErrorMessage = "Please enter a VALID email address")]
         public string Email { get; set; }
-        [Required (ErrorMessage ="Please enter your Zip")]
+        [Required(ErrorMessage ="Please enter a valid zip")]
+        [StringLength(5, ErrorMessage = "Zip must be 5 digits")]
         public string Zip { get; set; }
     }
 }

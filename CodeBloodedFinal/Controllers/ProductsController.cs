@@ -32,49 +32,64 @@ namespace CodeBloodedFinal.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string Name, string Email, string Zip)
+        public ActionResult Index(FormCollection Form, HealthyD userInfo)
         {
-            //------Adding in datbase---------
-            HealthyInD dbcontext = new HealthyInD();
-            HealthyD userInfo = new HealthyD();
-            userInfo.Name = Name;
-            userInfo.Email = Email;
-            userInfo.Zip = Zip;
-            dbcontext.HealthyDs.Add(userInfo);
-            dbcontext.SaveChanges();
-            //--------------------------------
 
-            //-------Connecting to API--------
-            //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
-            //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
-            String searchUrl = @"https://api.meetup.com/find/groups?key=" + APIKEY + $@"&sign=true&photo-host=public&zip=" + Zip + $@"&text=healthy,%20Detroit&page=10";
-            var jobject = MakeRequest(searchUrl);
-            //--------------------------------
-
-            //--------Reading/Formatting Data?--------
-            JavaScriptSerializer oJS = new JavaScriptSerializer();
-            RootObject oRootObject = new RootObject();
-            oRootObject = oJS.Deserialize<RootObject>(MakeRequest(searchUrl).ToString());
-            var o = jobject["result"].ToList();
-            //----------------------------------------
-
-            List<ADTO> lst = new List<ADTO>();
-
-            foreach (JObject r in o)
+                //------Adding in datbase---------
+                HealthyInD dbcontext = new HealthyInD();
+            if (userInfo == null)
             {
-                ADTO record = new ADTO();
-                record.Name = r["name"].ToString();
-                record.link = r["link"].ToString();
-                record.Members = int.Parse(r["members"].ToString());
-                // record.thumb_link = r["thumb_link"].ToString();
-                lst.Add(record);
 
+                userInfo = new HealthyD();
             }
-            ViewBag.results = lst;
-            ViewBag.Slogan = SloganList.GetRandomSlogan();
-            //ViewBag.location = jobject["location"]["areaDescription"].ToString();
 
-            return View("SearchResults", userInfo );
+                userInfo.Name = Form ["Name"].ToString();
+                userInfo.Email = Form ["Email"].ToString();
+                userInfo.Zip = Form ["Zip"].ToString();
+
+            if (ModelState.IsValid)
+            {
+                dbcontext.HealthyDs.Add(userInfo);
+                dbcontext.SaveChanges();
+                //--------------------------------
+
+                //-------Connecting to API--------
+                //searchUrl = @"https://api.meetup.com/find/groups?photo-host=public&zip=48235&page=10&text=healthy%2C+Detroit&sig_id=214750620&sig=e1f04082a1c49310a93c6fb4d0a6c75a4d2a14ab";
+                //String searchUrl = @"https://api.meetup.com/find/groups?key=5e1d7e6e714b153e30a0329197673&sign=true&photo-host=public&zip=48226&text=healthy,%20Detroit&page=10";
+                String searchUrl = @"https://api.meetup.com/find/groups?key=" + APIKEY + $@"&sign=true&photo-host=public&zip=" + userInfo.Zip + $@"&text=healthy,%20Detroit&page=10";
+                var jobject = MakeRequest(searchUrl);
+                //--------------------------------
+
+                //--------Reading/Formatting Data?--------
+                JavaScriptSerializer oJS = new JavaScriptSerializer();
+                RootObject oRootObject = new RootObject();
+                oRootObject = oJS.Deserialize<RootObject>(MakeRequest(searchUrl).ToString());
+                var o = jobject["result"].ToList();
+                //----------------------------------------
+
+                List<ADTO> lst = new List<ADTO>();
+
+                foreach (JObject r in o)
+                {
+                    ADTO record = new ADTO();
+                    record.Name = r["name"].ToString();
+                    record.link = r["link"].ToString();
+                    record.Members = int.Parse(r["members"].ToString());
+                    // record.thumb_link = r["thumb_link"].ToString();
+                    lst.Add(record);
+
+                }
+                ViewBag.results = lst;
+                ViewBag.Slogan = SloganList.GetRandomSlogan();
+                //ViewBag.location = jobject["location"]["areaDescription"].ToString();
+
+                return View("SearchResults", userInfo);
+            }
+            else
+            {
+                ViewBag.InvMessage = "Invalid Fields";
+                return View();
+            }
         }
 
         public JObject MakeRequest(string requestUrl)
