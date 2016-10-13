@@ -18,11 +18,11 @@ namespace SloganHealth
         "Make your home clean and clear",
         "Sleep 7 to 9 hours in a pitch dark bedroom",
         "Make sure you're vaccinated.  ",
-        "They say the best things in life are free, and coneys(which are almost free) aside, they’re pretty much right.In fact, here are 50 sweet things to do in The D that’ll cost you the grand total of zero dollars...",
+        "They say the best things in life are free, and coneys(which are almost free) aside, they’re pretty much right.",
         "Go to the MBAD Museum (African Bead Museum - Detroit) -Visit the home, shop, and outdoor exhibit of visual artist Olayami Dabls, who created the space to honor the cultures and art of Mother Africa within the city.",
         "Go to the DIA - Admission to this incredible museum is miraculously free of charge for Oakland, Wayne, and Macomb county residents. Make sure you check out the free entertainment and films on Friday nights.",
      "Go to the Detroit Historical Museum - Learn about this city’s never-boring past -- be it French fur trappers, Civil War forts, rum running, or sports heroes.",
-        "Wave “hi” to Canada - No really, they love it!",
+        "Wave “HI” to Canada - No really, they love it!",
       "Walk or bike the Dequindre Cut - Or skate, or jog, or line dance.Just get out and enjoy this beautiful 1.35-mile path of green space in the city!",
        "Browse volumes at John K.King Used & Rare Books - Stories upon stories within stories upon stories.",
         "Do a group bike ride - Join dozens, hundreds, or even thousands of other city boosters on bike rides through the city’s wide and open streets.Check out Slow Roll, Critical Mass, and Fender Bender collective -- just to name a few -- for upcoming rides.",
@@ -37,8 +37,7 @@ namespace SloganHealth
         "Walk or bike the Riverfront - Detroit’s riviera is just as beautiful as that of any other town.Err...any other Midwestern town.",
          "Get a museum adventure pass - Visit your local library to pick up a Detroit Museum Adventure Pass, which can help you get in free to museums that charge pesky old admission fees.",
         "Visit Pewabic Pottery - Rearrange the house number tiles they sell there so they spell “boobs” (80085!) and giggle to yourself as you peruse this historic ceramics studio.",
-        "Take a tour of the old Sanders Candy Factory - It's now operating under the name of Morley Candy Makers, but you can still see how they make their chocolates, and if you’re lucky, maybe you’ll have hit your head and wake up thinking you’re in Willy Wonka’s lair.",
-        "Go see live music",        "Absolutely available, all the time, almost all over the city, and often for free. Just make sure to tip the bands.",
+        "Go see live music! Absolutely available, all the time, almost all over the city, and often for free. Just make sure to tip the bands.",
         "Walk or bike to Belle Isle - If you don’t have the $10 yearly fee to enter the island, get on for free on two feet or two wheels.",
         "Once you’re at Belle Isle: go swimming - Many a great city lies on the bank of some body of water, but would you ever swim in New Orleans’ Mississippi River ? How about the San Francisco Bay ? The Detroit River may not win any cleanliness awards, but by all counts, it’s safe to baptize yourself in the river of rock.",
         "Play disc golf on Belle Isle ? -While you’re out adventuring on Belle Isle, you may as well toss a disc around.Just don’t forget your mosquito repellant.",
@@ -72,7 +71,7 @@ namespace SloganHealth
         {
             int upperbound = m_sloganList.Count;
             Random random = new Random();
-            int randomValue = random.Next(0,upperbound+1);
+            int randomValue = random.Next(0,upperbound-1);
 
             return m_sloganList[randomValue];
            }

@@ -35,17 +35,18 @@ namespace CodeBloodedFinal.Controllers
         public ActionResult Index(FormCollection Form, HealthyD userInfo)
         {
 
-                //------Adding in datbase---------
-                HealthyInD dbcontext = new HealthyInD();
+            //------Adding in datbase---------
+            HealthyInD dbcontext = new HealthyInD();
             if (userInfo == null)
             {
 
                 userInfo = new HealthyD();
             }
 
-                userInfo.Name = Form ["Name"].ToString();
-                userInfo.Email = Form ["Email"].ToString();
-                userInfo.Zip = Form ["Zip"].ToString();
+            userInfo.Name = Form["Name"].ToString();
+            userInfo.Email = Form["Email"].ToString();
+            string Zip = Form["Zip"].ToString();
+            userInfo.Zip = ZipRange(Zip);
 
             if (ModelState.IsValid)
             {
@@ -130,6 +131,14 @@ namespace CodeBloodedFinal.Controllers
                 return o;
             }
 
+        }
+
+        public string ZipRange(string zip)
+        {
+            if (zip != "48201"|| zip != "48202"||zip != "48204" || zip != "48205" || zip != "48206" || zip != "48207" || zip != "48208" || zip != "48209" || zip != "48210" || zip != "48211" || zip != "48213" || zip != "48214" || zip != "48215" || zip != "48216" || zip != "48217" || zip != "48219" || zip != "48221" || zip != "48222" || zip != "48223" || zip != "48224" || zip != "48226" || zip != "48227" || zip != "48228" || zip != "48231" || zip != "48232" || zip != "48233" || zip != "48234" || zip != "48235" || zip != "48238" || zip != "48242" || zip != "48243" || zip != "48244" || zip != "48255" || zip != "48260" || zip != "48264" || zip != "48265" || zip != "48266" || zip != "48267" || zip != "48268" || zip != "48269" || zip != "48272" || zip != "48275" || zip != "48277" || zip != "48278" || zip != "48279" || zip != "48288")
+        {
+                return "48226";
+            }else { return zip; }
         }
 
 

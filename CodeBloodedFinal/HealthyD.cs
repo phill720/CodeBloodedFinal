@@ -26,5 +26,6 @@ namespace CodeBloodedFinal
         [Required(ErrorMessage ="Please enter a valid zip")]
         [StringLength(5, ErrorMessage = "Zip must be 5 digits")]
         public string Zip { get; set; }
+        //public bool NewsRecv { get; set; }
     }
 }

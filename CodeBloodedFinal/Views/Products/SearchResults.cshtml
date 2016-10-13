@@ -10,6 +10,12 @@
 <br />
 
     <h4>Here is your tip of the day: : <br />@ViewBag.Slogan</h4>
+<br/> <SCRIPT LANGUAGE="JavaScript">
+
+if (window.print) {
+document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
+}
+</SCRIPT><br/>
         <div>
             <ul>
                 @foreach (var text in ViewBag.results)
