@@ -1,7 +1,21 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<body style="background-color:darkseagreen">
 
-<p>Use this area to provide additional information.</p>
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    <ul>
+        <li>    Create a Healthy Detroit community and build stronger relationships between neighbors.</li>
+
+        <li>    Building business in the Health Community around Metro Detroit.</li>
+
+        <li>    Meet people with common interest and hobbies, and celebrate healthy achievement.</li>
+
+    </ul>
+     @Html.ActionLink("Send us a tip!", "Contact") 
+    <a href="http://healthyinthed.azurewebsites.net/Products/Index">Ready for your List and Join our Newsletter</a>
+    <div>
+        @Html.ActionLink("Go Back Home", "Index")
+    </div>
+    </body>

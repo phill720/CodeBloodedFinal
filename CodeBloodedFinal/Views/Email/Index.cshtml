@@ -2,26 +2,27 @@
 @{
     ViewBag.Title = "Index";
 }
+<body style="background-color:darkseagreen">
+    <h2>Index</h2>
 
-<h2>Index</h2>
+    <center>
+        <img src="https://sylviahubbard.files.wordpress.com/2016/10/healthydlogo.png">  <br />
+        <p style="text-wrap:normal">@SloganHealth.SloganList.GetRandomSlogan()</p>
+    </center>
 
-<center>
-    <img src="https://sylviahubbard.files.wordpress.com/2016/10/healthydlogo.png">  <br />
-    <p style="text-wrap:normal">@SloganHealth.SloganList.GetRandomSlogan()</p>
-</center>
-
-<form method="post" name="contact_form" ;
-      action="mailto:bmike0001@gmail.com">
-    Your Name:
-    <input type="text" name="name" />
-    Email Address:
-    <input type="text" name="bmike000@gmail.com" />
-    Message:
+    <form method="post" name="contact_form" ;
+          action="mailto:bmike0001@gmail.com">
+        Your Name:
+        <input type="text" name="name" />
+        Email Address:
+        <input type="text" name="bmike000@gmail.com" />
+        Message:
 
 
-    <textarea name="message"></textarea>
-    <input type="submit" value="Submit" />
-</form>
+        <textarea name="message"></textarea>
+        <input type="submit" value="Submit" />
+    </form>
+    </body>
 
 
 
