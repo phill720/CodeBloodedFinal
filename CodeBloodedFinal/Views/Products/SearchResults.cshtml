@@ -4,33 +4,37 @@
     @{
         ViewBag.Title = "Search Results";
     }
-
+<body style="background-color:darkseagreen">
     <h2>Thank you for searching: @Model.Name</h2>
-@ViewBag.OutCityZip
+    <a href=""><img src="https://sylviahubbard.files.wordpress.com/2016/10/healthlogod_360.png" onclick="Logo_click" alt="HEALTHY IN THE D" width="140" style="float:right " /></a>
+    @ViewBag.OutCityZip
     <h3>Here are the listing for @Model.Zip</h3>
-<br />
+    <br />
+    <h4>Here is your tip of the day:</h4> 
+    <div style="text-wrap:normal; font-family:'Times New Roman', Times, serif; color:#7E3B0A; font-size:large" >@ViewBag.Slogan</div>
+    <br />
+    <a href="">Leave us a tip</a>
+    <SCRIPT LANGUAGE="JavaScript">
 
-    <h4>Here is your tip of the day: : <br />@ViewBag.Slogan</h4>
-<br/> <SCRIPT LANGUAGE="JavaScript">
-
-if (window.print) {
-document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
-}
-</SCRIPT><br/>
-        <div>
-            <ul>
-                @foreach (var text in ViewBag.results)
+        if (window.print) {
+            document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
+        }
+    </SCRIPT><br />
+    <div>
+        <ul>
+            @foreach (var text in ViewBag.results)
             {
-                    <li>
-                        <div>
-                            
-                            @text.Name;
-                        </div>
-                        <div style="color:blue">
-                            <a href="@text.link"> @text.link </a>
-                        </div>
+                <li>
+                    <div>
+
+                        @text.Name;
+                    </div>
+                    <div style="color:blue">
+                        <a href="@text.link"> @text.link </a>
+                    </div>
                     # of Members: @text.Members;
                 </li>
-                }
-            </ul>
-        </div>
+            }
+        </ul>
+    </div>
+</body>
