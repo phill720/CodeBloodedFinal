@@ -3,8 +3,11 @@
 }
 <body style="background-color:darkseagreen">
 
-    <h2>@ViewBag.Title.</h2>
-    <div style="text-wrap:normal; font-family:'Lucida Calligraphy'">@SloganHealth.SloganList.GetRandomSlogan()</div>
+    <center>
+        <img src="https://sylviahubbard.files.wordpress.com/2016/10/healthydlogo.png">  <br />
+        <p style="text-wrap:normal; font-family:'Times New Roman', Times, serif; color:#7E3B0A; font-size:large">@SloganHealth.SloganList.GetRandomSlogan()</p>
+    </center>
+    <h2>@ViewBag.Title</h2>
     <ul>
         <li>    Create a Healthy Detroit community and build stronger relationships between neighbors.</li>
 
@@ -13,9 +16,14 @@
         <li>    Meet people with common interest and hobbies, and celebrate healthy achievement.</li>
 
     </ul>
-     @Html.ActionLink("Send us a tip!", "Contact") 
-    <a href="http://healthyinthed.azurewebsites.net/Products/Index">Ready for your List and Join our Newsletter</a>
+    <center>
+        <div>
+            @Html.ActionLink("Send us a tip!", "Contact")
+        </div>
+        <a href="http://healthyinthed.azurewebsites.net/Products/Index">Ready for your List and Join our Newsletter</a>
+    </center>
     <div>
         @Html.ActionLink("Go Back Home", "Index")
     </div>
+
     </body>
