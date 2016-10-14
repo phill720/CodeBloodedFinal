@@ -8,6 +8,7 @@ namespace SloganHealth
 {
     public static class SloganList
     {
+        //------Creating list of tips/Slogans------
         private static List<string> m_sloganList = new List<string> { "Drink More Water",
 
         "Focus on Nutrients, Not Calories",
@@ -125,12 +126,15 @@ namespace SloganHealth
          "Bust a move - And now for something completely different: learn how to salsa dance on Fridays and Saturdays at Vicente’s Cuban Cuisine or even make the trek out to Diamondback Saloon to learn how to line dance.",
 
         "Run around with your pooch at a dog park - Or, go by yourself and run around with someone else’s pooch, since most owners will let you pet their dogs for free.",    };
+
+        
         public static string GetRandomSlogan()
         {
+            //-----Picks a random item out of the list-----
             int upperbound = m_sloganList.Count;
             Random random = new Random();
             int randomValue = random.Next(0,upperbound-1);
-
+            //------Returns that random Item------
             return m_sloganList[randomValue];
            }
     }
