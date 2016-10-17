@@ -9,7 +9,8 @@ namespace SloganHealth
     public static class SloganList
     {
         //------Creating list of tips/Slogans------
-        private static List<string> m_sloganList = new List<string> { "Drink More Water",
+        private static List<string> m_sloganList = new List<string> {
+        "Drink More Water",
 
         "Focus on Nutrients, Not Calories",
 
@@ -35,17 +36,17 @@ namespace SloganHealth
 
         "Go to the DIA - Admission to this incredible museum is miraculously free of charge for Oakland, Wayne, and Macomb county residents. Make sure you check out the free entertainment and films on Friday nights.",
 
-     "Go to the Detroit Historical Museum - Learn about this city’s never-boring past -- be it French fur trappers, Civil War forts, rum running, or sports heroes.",
+        "Go to the Detroit Historical Museum - Learn about this city’s never-boring past -- be it French fur trappers, Civil War forts, rum running, or sports heroes.",
 
         "Wave “HI” to Canada - No really, they love it!",
 
-      "Walk or bike the Dequindre Cut - Or skate, or jog, or line dance.Just get out and enjoy this beautiful 1.35-mile path of green space in the city!",
+        "Walk or bike the Dequindre Cut - Or skate, or jog, or line dance.Just get out and enjoy this beautiful 1.35-mile path of green space in the city!",
 
-       "Browse volumes at John K.King Used & Rare Books - Stories upon stories within stories upon stories.",
+        "Browse volumes at John K.King Used & Rare Books - Stories upon stories within stories upon stories.",
 
         "Do a group bike ride - Join dozens, hundreds, or even thousands of other city boosters on bike rides through the city’s wide and open streets.Check out Slow Roll, Critical Mass, and Fender Bender collective -- just to name a few -- for upcoming rides.",
 
-       "Sit on the beach in Campus Martius - Someone had the brilliant idea of creating a giant adult sandbox in the middle of Downtown, complete with adult beverages and smooth jazz.",
+        "Sit on the beach in Campus Martius - Someone had the brilliant idea of creating a giant adult sandbox in the middle of Downtown, complete with adult beverages and smooth jazz.",
 
         "Watch a movie at New Center Park - This green oasis in New Center is a great place to catch a film and admire the lights of the towering Fisher Building.",
 
@@ -53,17 +54,17 @@ namespace SloganHealth
 
         "Go to Eastern Market - There’s always something going on, either within the market or in the bustling shops and restaurants that surround it.",
 
-         "Go to a free festival - From the Detroit Jazz Festival to Dally in the Alley to Meridian Winter Blast and a wildly high number more, there’s always free entertainment options in the city.",
+        "Go to a free festival - From the Detroit Jazz Festival to Dally in the Alley to Meridian Winter Blast and a wildly high number more, there’s always free entertainment options in the city.",
 
         "Visit a cider mill - As the nation’s third-most prolific apple-growing state, Michigan has this awesome combo that not every state gets to enjoy.Cider and donuts in Florida? Yeah right.",
 
         "Visit the Anna Scripps Whitcomb Conservatory - Wander around the cacti, palms, and all manner of exotics housed within this historic greenhouse.",
 
-         "Ride the elevator at the Renaissance Center - Climbing the up 72 stories and watching the view of Windsor and the Detroit River through the glass also provides a you with a sweet chance for the aforementioned wave at Canada.",
+        "Ride the elevator at the Renaissance Center - Climbing the up 72 stories and watching the view of Windsor and the Detroit River through the glass also provides a you with a sweet chance for the aforementioned wave at Canada.",
 
         "Walk or bike the Riverfront - Detroit’s riviera is just as beautiful as that of any other town.Err...any other Midwestern town.",
 
-         "Get a museum adventure pass - Visit your local library to pick up a Detroit Museum Adventure Pass, which can help you get in free to museums that charge pesky old admission fees.",
+        "Get a museum adventure pass - Visit your local library to pick up a Detroit Museum Adventure Pass, which can help you get in free to museums that charge pesky old admission fees.",
 
         "Visit Pewabic Pottery - Rearrange the house number tiles they sell there so they spell “boobs” (80085!) and giggle to yourself as you peruse this historic ceramics studio.",
 
@@ -95,7 +96,7 @@ namespace SloganHealth
 
         "Wander around Hamtramck - The most diverse city in Michigan-- representing humanity across the seven seas.",
 
-         "Cruise Jefferson Ave along the water -See many sides of the city by bike, by car, by... um, pony?",
+        "Cruise Jefferson Ave along the water -See many sides of the city by bike, by car, by... um, pony?",
 
         "Take a self-guided architectural tour -By car, by bike, or by foot --don’t buy the ticket, take the ride.",
 
@@ -121,9 +122,9 @@ namespace SloganHealth
 
         "Volunteer with a local organization - Lord knows the city needs help, and there is a multitude of organizations that will help you help others.Donate your free time to a worthy cause, and have fun doing it.",
 
-         "Go wildlife watching - Pheasants, coyote, deer, bald eagles, peregrine falcons...who knows what else?!Our urban prairie is home to many unexpected animals.",
+        "Go wildlife watching - Pheasants, coyote, deer, bald eagles, peregrine falcons...who knows what else?!Our urban prairie is home to many unexpected animals.",
 
-         "Bust a move - And now for something completely different: learn how to salsa dance on Fridays and Saturdays at Vicente’s Cuban Cuisine or even make the trek out to Diamondback Saloon to learn how to line dance.",
+        "Bust a move - And now for something completely different: learn how to salsa dance on Fridays and Saturdays at Vicente’s Cuban Cuisine or even make the trek out to Diamondback Saloon to learn how to line dance.",
 
         "Run around with your pooch at a dog park - Or, go by yourself and run around with someone else’s pooch, since most owners will let you pet their dogs for free.",    };
 
