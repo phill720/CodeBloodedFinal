@@ -147,6 +147,11 @@ namespace CodeBloodedFinal.Controllers
 
         }
 
+        public ActionResult Store()
+        {
+            return View();
+        }
+
         public string ZipRange(string zip)
         {
             //---Return downtown if zip isn't in detroit---

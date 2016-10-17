@@ -9,7 +9,8 @@ namespace SloganHealth
     public static class SloganList
     {
         //------Creating list of tips/Slogans------
-        private static List<string> m_sloganList = new List<string> {
+        private static List<string> m_sloganList = new List<string>
+        {
         "Drink More Water",
 
         "Focus on Nutrients, Not Calories",
@@ -28,7 +29,7 @@ namespace SloganHealth
 
         "Sleep 7 to 9 hours in a pitch dark bedroom",
 
-        "Make sure you're vaccinated.  ",
+        "Make sure you're vaccinated.",
 
         "They say the best things in life are free, and coneys(which are almost free) aside, they’re pretty much right.",
 

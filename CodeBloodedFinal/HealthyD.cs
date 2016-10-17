@@ -24,7 +24,7 @@ namespace CodeBloodedFinal
             ErrorMessage = "Please enter a VALID email address")]
         public string Email { get; set; }
         [Required(ErrorMessage ="Please enter a valid zip")]
-        [StringLength(5, ErrorMessage = "Zip must be 5 digits")]
+        [StringLength(5, ErrorMessage = "Zip must be 5 digits", MinimumLength = 5)]
         public string Zip { get; set; }
         //public bool NewsRecv { get; set; }
     }

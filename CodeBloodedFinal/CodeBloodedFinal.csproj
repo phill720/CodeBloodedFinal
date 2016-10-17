@@ -319,6 +319,7 @@
     <Content Include="Views\Products\SearchResults.cshtml" />
     <Content Include="Views\Email\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Store.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
