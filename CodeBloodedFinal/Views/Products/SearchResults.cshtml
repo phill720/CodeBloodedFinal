@@ -25,16 +25,15 @@
             @foreach (var text in ViewBag.results)
             {
                 <li>
-                    <div>
-
-                        @text.Name;
+                    <div style="font-weight:bold; font-size:large">
+                        @text.Name
                     </div>
                     <div style="color:blue">
                         <a href="@text.link" target="_blank"> @text.link </a>
                     </div>
                     # of Members: @text.Members
                     <div>
-
+                        
                     </div>
                 </li>
             }
