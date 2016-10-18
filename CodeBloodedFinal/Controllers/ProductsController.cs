@@ -50,12 +50,24 @@ namespace CodeBloodedFinal.Controllers
             userInfo.Zip = ZipRange(Zip);
             //----------------------------------------------------
 
+
             //-------If no errors are returned-------
             if (ModelState.IsValid)
             {
+                //-----Check for existing emails----
+                if (dbcontext.HealthyDs.Any(x => x.Email == userInfo.Email))
+                { 
+                
+                
+            }
                 //-----Final save to database------
-                dbcontext.HealthyDs.Add(userInfo);
-                dbcontext.SaveChanges();
+                else
+                {
+                    dbcontext.HealthyDs.Add(userInfo);
+                    dbcontext.SaveChanges();
+                }
+
+                
                 //---------------------------------
 
                 //-------Connecting to API--------
@@ -83,8 +95,8 @@ namespace CodeBloodedFinal.Controllers
                     record.Members = int.Parse(r["members"].ToString());
                     lst.Add(record);
                 }
-                //-----------------------
-                ViewBag.results = lst;
+                //-----------Alphabetize list by name-----------
+                ViewBag.results = lst.OrderBy(item => item.Name);
                 ViewBag.Slogan = SloganList.GetRandomSlogan();
 
                 //----Displays searchResults page with info----
@@ -112,7 +124,7 @@ namespace CodeBloodedFinal.Controllers
                 request.UseDefaultCredentials = true;
                 request.Proxy.Credentials = System.Net.CredentialCache.DefaultCredentials;
                 //------------------------------
-                
+
                 using (HttpWebResponse response = request.GetResponse() as HttpWebResponse)
                 {
                     //------Keep trying if not granted access------
@@ -155,18 +167,18 @@ namespace CodeBloodedFinal.Controllers
         public string ZipRange(string zip)
         {
             //---Return downtown if zip isn't in detroit---
-            if (zip != "48201" &&  zip != "48202" && zip != "48204" && zip != "48205" && zip != "48206" && zip != "48207" && zip != "48208" && zip != "48209" && zip != "48210" && zip != "48211" && zip != "48213" && zip != "48214" && zip != "48215" && zip != "48216" && zip != "48217" && zip != "48219" && zip != "48221" && zip != "48222" && zip != "48223" && zip != "48224" && zip != "48226" && zip != "48227" && zip != "48228" && zip != "48231" && zip != "48232" && zip != "48233" && zip != "48234" && zip != "48235" && zip != "48238" && zip != "48242" && zip != "48243" && zip != "48244" && zip != "48255" && zip != "48260" && zip != "48264" && zip != "48265" && zip != "48266" && zip != "48267" && zip != "48268" && zip != "48269" && zip != "48272" && zip != "48275" && zip != "48277" && zip != "48278" && zip != "48279" && zip != "48288")
-                {
-                    ViewBag.OutCityZip = "Unfortunately your zip is out of Detroit, but here's a list of great Detroit Groups.";
-                    return "48226";
-                }
+            if (zip != "48201" && zip != "48202" && zip != "48204" && zip != "48205" && zip != "48206" && zip != "48207" && zip != "48208" && zip != "48209" && zip != "48210" && zip != "48211" && zip != "48213" && zip != "48214" && zip != "48215" && zip != "48216" && zip != "48217" && zip != "48219" && zip != "48221" && zip != "48222" && zip != "48223" && zip != "48224" && zip != "48226" && zip != "48227" && zip != "48228" && zip != "48231" && zip != "48232" && zip != "48233" && zip != "48234" && zip != "48235" && zip != "48238" && zip != "48242" && zip != "48243" && zip != "48244" && zip != "48255" && zip != "48260" && zip != "48264" && zip != "48265" && zip != "48266" && zip != "48267" && zip != "48268" && zip != "48269" && zip != "48272" && zip != "48275" && zip != "48277" && zip != "48278" && zip != "48279" && zip != "48288")
+            {
+                ViewBag.OutCityZip = "Unfortunately your zip is out of Detroit, but here's a list of great Detroit Groups.";
+                return "48226";
+            }
 
             //------Keep the same zip if in detroit------
             else
-                {
-                    ViewBag.OutCityZip = "";
-                    return zip;
-                }
+            {
+                ViewBag.OutCityZip = "";
+                return zip;
+            }
             //---------------------------------------------
         }
     }
