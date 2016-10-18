@@ -55,19 +55,14 @@ namespace CodeBloodedFinal.Controllers
             if (ModelState.IsValid)
             {
                 //-----Check for existing emails----
-                if (dbcontext.HealthyDs.Any(x => x.Email == userInfo.Email))
-                { 
-                
-                
-            }
-                //-----Final save to database------
-                else
+                if (!(dbcontext.HealthyDs.Any(x => x.Email == userInfo.Email)))
+               
                 {
                     dbcontext.HealthyDs.Add(userInfo);
                     dbcontext.SaveChanges();
                 }
 
-                
+
                 //---------------------------------
 
                 //-------Connecting to API--------

@@ -1,13 +1,22 @@
-﻿@{
+﻿
+@{
     ViewBag.Title = "About";
+    
 }
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type='text/javascript' src='js/infinite-rotator.js'></script>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 <body style="background-color:darkseagreen">
+
 
     <center>
         <img src="https://sylviahubbard.files.wordpress.com/2016/10/healthydlogo.png">  <br />
         <p style="text-wrap:normal; font-family:'Times New Roman', Times, serif; color:#7E3B0A; font-size:large">@SloganHealth.SloganList.GetRandomSlogan()</p>
+        @*<a href="https://www.tripadvisor.com.au/LocationPhotoDirectLink-g42660-d1892673-i95774558-Motor_City_Brew_Tours-Royal_Oak_Michigan.html#95774558"><img alt="" src="https://media-cdn.tripadvisor.com/media/photo-s/05/b5/67/4a/motor-city-brew-tours.jpg" style="float:right" /></a>*@
     </center>
-    <h2>@ViewBag.Title</h2>
+    <h2>@ViewBag.Title</h2> 
+    <h4>@DateTime.Now.DayOfWeek, @DateTime.Now.Date </h4>
     <ul>
         <li>    Create a Healthy Detroit community and build stronger relationships between neighbors.</li>
 
@@ -21,16 +30,82 @@
             @Html.ActionLink("Send us a tip!", "Contact")
         </div>
         <a href="http://healthyinthed.azurewebsites.net/Products/Index">Ready for your List and Join our Newsletter</a>
+        @*<div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-image_fx="zoompan" id="my-slider">
+            <ol>
+                <li>
+                    <img src="~/1476811968233_81945.jpg" />
+                </li>
+                <li>
+                    <img src="~/1476811968198_694429.jpg" />
+                </li>
+                <li>
+                    <img src="~/1476811999462_831827.png" />
+                </li>
+                <li>
+                    <img src="~/1476811999522_521034.png" />
+                </li>
+            </ol>
+        </div>*@
+
+        <script type="text/javascript">
+// Author: ricocheting.com
+// Description: slideshow that allows visitors to flip through a series of images on your website
+
+var x=0;
+
+function rotate(num){
+fs=document.ff.slide;
+x=num%fs.length;
+if(x<0) x=fs.length-1;
+document.images.show.src=fs.options[x].value;
+fs.selectedIndex=x;}
+
+function auto() {
+if(document.ff.fa.value == "Stop"){
+rotate(++x);setTimeout("auto()", 5000);}}
+        </script>
+
+        <form name="ff">
+            <table cellpadding="3" style="border-collapse:collapse;" >
+                <tr><th align="center">Health in D</th></tr>
+
+                <tr>
+                    <td align="center">
+                        <img src="C:\Users\Administrator\Documents\Visual Studio 2015\Projects\CodeBloodedFinal\CodeBloodedFinal\1476811968198_694429.jpg" name="show">
+                    </td>
+                </tr>
+
+                <tr><img src="~/dequindre cut north before.jpg" />
+                    <td align="center" style="border:0; border-color:darkseagreen" height="90" width="90">
+                        <select name="slide" onChange="rotate(this.selectedIndex);">
+                            <option value="~/1476811999462_831827.png">*Insert Name 1*</option>
+                            <option value="~/1476811999522_521034.png">*Insert Name 2*</option>
+                            <option value="~/rsz_1476811968198_694429.jpg">*Insert Name 3*</option>
+                            <option value="~/dequindre cut north before.jpg">*Old Dequindre Cut*</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">
+                        <input type="button" onclick="rotate(x-1);" value="&lt;&lt;" title="Last Picture" />
+                        <input type="button" name="fa" onClick="this.value=((this.value=='Stop')?'Start':'Stop');auto();" value="Start" title="Autoplay" style="width:75px;" />
+                        <input type="button" onclick="rotate(x+1);" value="&gt;&gt;" title="Next Picture" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
     </center>
     <div>
 
         <div>
             Hit us up on twitter fam!
         </div>
-        <a href="https://twitter.com/ChrisPhill9"><img src="http://vignette3.wikia.nocookie.net/kungfupanda/images/8/83/Twitter-favicon.png/revision/latest?cb=20150407225142" height="30" width="30"/> &#64;ChrisPhill9</a> <br />
+        <a href="https://twitter.com/ChrisPhill9"><img src="http://vignette3.wikia.nocookie.net/kungfupanda/images/8/83/Twitter-favicon.png/revision/latest?cb=20150407225142" height="30" width="30" /> &#64;ChrisPhill9</a> <br />
         <a href="https://twitter.com/sylviahubbard1"><img src="http://vignette3.wikia.nocookie.net/kungfupanda/images/8/83/Twitter-favicon.png/revision/latest?cb=20150407225142" height="30" width="30" />&#64;sylviahubbard1</a> <br />
         <a href="https://twitter.com/MahdiAfrin"><img src="http://vignette3.wikia.nocookie.net/kungfupanda/images/8/83/Twitter-favicon.png/revision/latest?cb=20150407225142" height="30" width="30" />&#64;MahdiAfrin</a> <br />
         <a href="https://twitter.com/Bmike007111"><img src="http://vignette3.wikia.nocookie.net/kungfupanda/images/8/83/Twitter-favicon.png/revision/latest?cb=20150407225142" height="30" width="30" />&#64;Bmike007111</a> <br />
         <br /> @Html.ActionLink("Go Back Home", "Index")
     </div>
-    </body>
+</body>
