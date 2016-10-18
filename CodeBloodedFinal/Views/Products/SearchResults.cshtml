@@ -1,39 +1,41 @@
 ﻿
 @model CodeBloodedFinal.HealthyD
 
-    @{
-        ViewBag.Title = "Search Results";
-    }
+@{
+    ViewBag.Title = "Search Results";
+}
 <body style="background-color:darkseagreen">
     <h2>Thank you for searching: @Model.Name</h2>
     <a href=""><img src="https://sylviahubbard.files.wordpress.com/2016/10/healthlogod_360.png" onclick="Logo_click" alt="HEALTHY IN THE D" width="140" style="float:right " /></a>
     @ViewBag.OutCityZip
     <h3>Here are the listing for @Model.Zip</h3>
     <br />
-    <h4>Here is your tip of the day:</h4> 
-    <div style="text-wrap:normal; font-family:'Times New Roman', Times, serif; color:#7E3B0A; font-size:large" >@ViewBag.Slogan</div>
+    <h4>Here is your tip of the day:</h4>
+    <div style="text-wrap:normal; font-family:'Times New Roman', Times, serif; color:#7E3B0A; font-size:large">@ViewBag.Slogan</div>
     <br />
     <a href="http://healthyinthed.azurewebsites.net/Home/Contact">Leave us a tip</a>
-    
+
     <SCRIPT LANGUAGE="JavaScript">
 
         if (window.print) {
             document.write('<form><input type=button name=print value="Print" onClick="window.print()"></form>');
         }
-    </SCRIPT><br />
+    </SCRIPT>
+
+    <br />
 
     <div class="alignright" style="float:right">
         <script type="text/javascript" style="float:right">
-          amzn_assoc_ad_type = "banner";
-    amzn_assoc_marketplace = "amazon";
-    amzn_assoc_region = "US";
-    amzn_assoc_placement = "assoc_banner_placement_default";
-    amzn_assoc_banner_type = "ez";
-    amzn_assoc_p = "11";
-    amzn_assoc_width = "500";
-    amzn_assoc_height = "600";
-    amzn_assoc_tracking_id = "healthyinthed-20";
-    amzn_assoc_linkid = "755f997842ddd3ce06d58d6f84a7154b";
+            amzn_assoc_ad_type = "banner";
+            amzn_assoc_marketplace = "amazon" + "Sports &amp Outdoors" + "Exercise &amp Fitness";
+            amzn_assoc_region = "US";
+            amzn_assoc_placement = "assoc_banner_placement_default";
+            amzn_assoc_banner_type = "ez";
+            amzn_assoc_p = "11";
+            amzn_assoc_width = "500";
+            amzn_assoc_height = "600";
+            amzn_assoc_tracking_id = "healthyinthed-20";
+            amzn_assoc_linkid = "755f997842ddd3ce06d58d6f84a7154b";
         </script>
         <script src="//z-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1"></script>
     </div>
@@ -50,19 +52,19 @@
                     </div>
                     # of Members: @text.Members
                     <div>
-                        
+
                     </div>
                 </li>
             }
         </ul>
     </div>
     <script type="text/javascript">
-   amzn_assoc_ad_type = "link_enhancement_widget";
-   amzn_assoc_tracking_id = "healthyinthed-20";
-   amzn_assoc_linkid = "030840df7308023bec5ddf9b14e1376a";
-   amzn_assoc_placement = "";
-   amzn_assoc_marketplace = "amazon";
-   amzn_assoc_region = "US";
+        amzn_assoc_ad_type = "link_enhancement_widget";
+        amzn_assoc_tracking_id = "healthyinthed-20";
+        amzn_assoc_linkid = "030840df7308023bec5ddf9b14e1376a";
+        amzn_assoc_placement = "";
+        amzn_assoc_marketplace = "amazon";
+        amzn_assoc_region = "US";
     </script>
     @*<script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>*@
 </body>
