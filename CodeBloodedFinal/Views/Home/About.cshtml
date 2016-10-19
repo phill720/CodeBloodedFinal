@@ -30,72 +30,7 @@
             @Html.ActionLink("Send us a tip!", "Contact")
         </div>
         <a href="http://healthyinthed.azurewebsites.net/Products/Index">Ready for your List and Join our Newsletter</a>
-        @*<div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-image_fx="zoompan" id="my-slider">
-            <ol>
-                <li>
-                    <img src="~/1476811968233_81945.jpg" />
-                </li>
-                <li>
-                    <img src="~/1476811968198_694429.jpg" />
-                </li>
-                <li>
-                    <img src="~/1476811999462_831827.png" />
-                </li>
-                <li>
-                    <img src="~/1476811999522_521034.png" />
-                </li>
-            </ol>
-        </div>*@
-
-        <script type="text/javascript">
-// Author: ricocheting.com
-// Description: slideshow that allows visitors to flip through a series of images on your website
-
-var x=0;
-
-function rotate(num){
-fs=document.ff.slide;
-x=num%fs.length;
-if(x<0) x=fs.length-1;
-document.images.show.src=fs.options[x].value;
-fs.selectedIndex=x;}
-
-function auto() {
-if(document.ff.fa.value == "Stop"){
-rotate(++x);setTimeout("auto()", 5000);}}
-        </script>
-
-        <form name="ff">
-            <table cellpadding="3" style="border-collapse:collapse;" >
-                <tr><th align="center">Health in D</th></tr>
-
-                <tr>
-                    <td align="center">
-                        <img src="C:\Users\Administrator\Documents\Visual Studio 2015\Projects\CodeBloodedFinal\CodeBloodedFinal\1476811968198_694429.jpg" name="show">
-                    </td>
-                </tr>
-
-                <tr><img src="~/dequindre cut north before.jpg" />
-                    <td align="center" style="border:0; border-color:darkseagreen" height="90" width="90">
-                        <select name="slide" onChange="rotate(this.selectedIndex);">
-                            <option value="~/1476811999462_831827.png">*Insert Name 1*</option>
-                            <option value="~/1476811999522_521034.png">*Insert Name 2*</option>
-                            <option value="~/rsz_1476811968198_694429.jpg">*Insert Name 3*</option>
-                            <option value="~/dequindre cut north before.jpg">*Old Dequindre Cut*</option>
-                        </select>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td align="center">
-                        <input type="button" onclick="rotate(x-1);" value="&lt;&lt;" title="Last Picture" />
-                        <input type="button" name="fa" onClick="this.value=((this.value=='Stop')?'Start':'Stop');auto();" value="Start" title="Autoplay" style="width:75px;" />
-                        <input type="button" onclick="rotate(x+1);" value="&gt;&gt;" title="Next Picture" />
-                    </td>
-                </tr>
-            </table>
-        </form>
-
+       
     </center>
     <div>
 
